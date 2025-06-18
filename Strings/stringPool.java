@@ -22,5 +22,7 @@ public class stringPool {
         String str1 = new String("Sachin");
         String str2 = new String("Sachin");
         System.out.println(str1 == str2); //False
+        // we can check with .equals method
+        System.out.println(str1.equals(b)); //False
     }
 }
