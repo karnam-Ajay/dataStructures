@@ -11,6 +11,6 @@ public class ToString {
         System.out.println(Arrays.toString(new int[] {1,2,4,5,6}));
         // we can print null value also 
         String name = null;
-        System.out.println(name);
+        System.out.println(name); 
     }
 }
