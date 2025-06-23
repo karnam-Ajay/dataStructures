@@ -12,7 +12,8 @@ public class AnyPattern{
        //rectanglePattern(5);
        //invertedRightTriangle(7);
        //numberPattern(5);
-       invertedNumpattern(5);
+    //    invertedNumpattern(5);
+    verticalPyramidOfNums(8);
     }
 
     static void rightAnglePattern(int n){
@@ -79,5 +80,53 @@ public class AnyPattern{
             System.out.println();
         }
     }
+
+
+    //Print the below pattern
+    // *
+    // **
+    // ***
+    // ****
+    // *****
+    // ****
+    // ***
+    // **
+    // *
+    static void verticalPyramid(int n){
+        for (int row = 1; row <= 2*n; row++) {
+            int totalNoOfCols = (row > n) ? 2*n - row : row ;
+            for (int col = 1; col <= totalNoOfCols; col++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
     
+
+    // Print Below pattern
+    
+        // 1 
+        // 1 2 
+        // 1 2 3 
+        // 1 2 3 4 
+        // 1 2 3 4 5 
+        // 1 2 3 4 5 6 
+        // 1 2 3 4 5 6 7 
+        // 1 2 3 4 5 6 7 8 
+        // 1 2 3 4 5 6 7 
+        // 1 2 3 4 5 6 
+        // 1 2 3 4 5 
+        // 1 2 3 4 
+        // 1 2 3 
+        // 1 2 
+        // 1
+        static void verticalPyramidOfNums(int n){
+        for (int row = 1; row <= 2*n; row++) {
+            int totalNoOfCols = (row > n) ? 2*n - row : row ;
+            for (int col = 1; col <= totalNoOfCols; col++) {
+                System.out.print(col + " ");
+            }
+            System.out.println();
+        }
+    }
 }
