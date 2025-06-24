@@ -13,7 +13,9 @@ public class AnyPattern{
        //invertedRightTriangle(7);
        //numberPattern(5);
     //    invertedNumpattern(5);
-    verticalPyramidOfNums(8);
+    // verticalPyramidOfNums(8);
+    // rhombusPattern(5);
+    numbersPyramid(5);
     }
 
     static void rightAnglePattern(int n){
@@ -94,8 +96,8 @@ public class AnyPattern{
     // *
     static void verticalPyramid(int n){
         for (int row = 1; row <= 2*n; row++) {
-            int totalNoOfCols = (row > n) ? 2*n - row : row ;
-            for (int col = 1; col <= totalNoOfCols; col++) {
+            int totalNoOfColsInRow = (row > n) ? 2*n - row : row ;
+            for (int col = 1; col <= totalNoOfColsInRow; col++) {
                 System.out.print("* ");
             }
             System.out.println();
@@ -122,11 +124,59 @@ public class AnyPattern{
         // 1
         static void verticalPyramidOfNums(int n){
         for (int row = 1; row <= 2*n; row++) {
-            int totalNoOfCols = (row > n) ? 2*n - row : row ;
-            for (int col = 1; col <= totalNoOfCols; col++) {
+            int totalNoOfColsInRow = (row > n) ? 2*n - row : row ;
+            for (int col = 1; col <= totalNoOfColsInRow; col++) {
                 System.out.print(col + " ");
             }
             System.out.println();
+        }
+    }
+
+    //rhombus pattern
+        //     * 
+        //    * * 
+        //   * * * 
+        //  * * * * 
+        // * * * * * 
+        //  * * * * 
+        //   * * * 
+        //    * * 
+        //     * 
+    static void rhombusPattern(int n){
+        for (int row = 1; row <= 2 * n; row++) {
+            int totalNoOfColsInRow = (row > n) ? 2*n - row : row;
+            int noOfSpaces = n - totalNoOfColsInRow;
+            for (int spaces = 0; spaces < noOfSpaces; spaces++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= totalNoOfColsInRow; col++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+//Print below pattern
+//      1
+//     212
+//    32123
+//   4321234
+//  543212345
+
+    static void numbersPyramid(int n){
+        for (int row = 1; row <= n; row++) {
+            // spaces printing
+            for (int spaces = 0; spaces <= n - row; spaces++) {
+                System.out.print(" ");
+            }
+
+           for (int col = row; col >=1; col--) {
+            System.out.print(col);
+           }
+           for (int col = 2; col <= row; col++) {
+            System.out.print(col);
+           }
+           System.out.println();
         }
     }
 }
