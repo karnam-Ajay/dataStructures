@@ -15,7 +15,9 @@ public class AnyPattern{
     //    invertedNumpattern(5);
     // verticalPyramidOfNums(8);
     // rhombusPattern(5);
-    numbersPyramid(5);
+    // numbersPyramid(5);
+    // rhombusNums(5);
+     numbersSquareAsc(4);
     }
 
     static void rightAnglePattern(int n){
@@ -177,6 +179,60 @@ public class AnyPattern{
             System.out.print(col);
            }
            System.out.println();
+        }
+    }
+
+
+    // rhombus numbers
+//     1
+//    212
+//   32123
+//  4321234
+// 543212345
+//  4321234
+//   32123
+//    212
+//     1
+    static void rhombusNums(int n){
+        for (int row = 1; row <= 2 * n; row++) {
+            int totalNoOfColsInRow = (row > n) ? 2*n - row : row;
+            int spaces = n - totalNoOfColsInRow;
+            for (int spc = 1; spc <= spaces; spc++) {
+                System.out.print(" ");
+            }
+
+            for (int col = totalNoOfColsInRow ; col >=1; col--) {
+                System.out.print(col);
+            }
+
+            for (int col = 2 ; col <=totalNoOfColsInRow; col++) {
+                System.out.print(col);
+            }
+
+            System.out.println();
+        }
+    }
+
+
+    //Print below pattern
+    // 4 4 4 4 4 4 4 4 4 
+    // 4 3 3 3 3 3 3 3 4 
+    // 4 3 2 2 2 2 2 3 4 
+    // 4 3 2 1 1 1 2 3 4 
+    // 4 3 2 1 0 1 2 3 4 
+    // 4 3 2 1 1 1 2 3 4 
+    // 4 3 2 2 2 2 2 3 4 
+    // 4 3 3 3 3 3 3 3 4 
+    // 4 4 4 4 4 4 4 4 4
+    static void numbersSquareAsc(int n) {
+        int originalN = n;
+        n = 2 * n;
+        for (int row = 0; row <= n; row++) {
+            for (int col = 0; col <= n; col++) {
+                int atEveryIndex = originalN - Math.min(Math.min(row, col), Math.min(n-row, n-col));
+                System.out.print(atEveryIndex + " ");
+            }
+        System.out.println();
         }
     }
 }
