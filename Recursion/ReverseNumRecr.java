@@ -5,7 +5,9 @@ public class ReverseNumRecr {
     public static void main(String[] args) {
         // ReverseNum(1234);
         // System.out.println(sum);
-        System.out.println(ReverseNum1(1234));
+        // System.out.println(ReverseNum1(1234));
+    //    System.out.println(Palindrome(12321));
+    System.out.println(zerosCount(0));
     }
 
     // Method 1, by creating a static variable outside the method
@@ -38,4 +40,30 @@ public class ReverseNumRecr {
        return rem * (int) (Math.pow(10, digits -1)) + helperFunction(n/10, digits - 1);
     }
 
+
+    // check given number is palindrome or not
+
+    static boolean Palindrome(int n){
+        return n == ReverseNum1(n);
+    }
+
+
+    // Count number of Zeros
+
+    static int zerosCount(int n){
+        return helper(n,0);
+    }
+
+     static int helper(int n,int count){
+        if (n == 0) {
+            return count;
+        }
+
+        if (n % 10 == 0) {
+            return helper(n/10,count+1);
+        }
+        return helper(n/10, count);
+        
+    }
+    
 }
