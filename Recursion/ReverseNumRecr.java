@@ -20,6 +20,7 @@ public class ReverseNumRecr {
         ReverseNum(n/10);
     }
 
+    //Method 2
     static int ReverseNum1(int n){
         //Sometimes you might need some additional arguments in the function
         // so create one helperFunction
