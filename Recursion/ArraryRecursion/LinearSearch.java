@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class LinearSearch {
     public static void main(String[] args) {
-        int[] arr = {1,3,4,4,6,7,9};
+        int[] arr = {1,3,4,4,4,7,9};
         // System.out.println(linearSrch(arr, 8, 0));  //false
         // System.out.println(linearSrchIdx(arr, 4, 0)); //2
         // System.out.println(LinearSearchLast(arr, 6, arr.length - 1));  //3
         // SearchMultipleIndexes(arr, 2, 0);
         // System.out.println(list);
         // System.out.println(SearchWithArrList(arr, 4, 0, new ArrayList<>())); // [2,3]
+       ArrayList<Integer> res = SearchWithoutArrListInArgs(arr,4,0);
+        System.out.println(res);
     }
 
     // Linear Search with Recursion
@@ -76,5 +78,21 @@ public class LinearSearch {
         }
         
         return SearchWithArrList(arr, target, index + 1, list);
+    }
+
+    // Program to find an element in an array using ArrayList inside the function body
+    static ArrayList<Integer> SearchWithoutArrListInArgs(int[] arr,int target,int index){
+        ArrayList<Integer> list = new ArrayList<>();
+        if(index == arr.length){
+            return list;
+        }
+
+        if(arr[index] == target){
+            list.add(index);
+        }
+
+        ArrayList<Integer> ansFromBelowList = SearchWithoutArrListInArgs(arr,target,index + 1);
+        list.addAll(ansFromBelowList);
+        return list;
     }
 }
