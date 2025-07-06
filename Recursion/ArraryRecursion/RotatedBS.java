@@ -1,7 +1,7 @@
 public class RotatedBS {
     public static void main(String[] args) {
         int[] nums = {5,6,7,8,9,1,2,3};
-        System.out.println(RBS(nums, 4, 0, nums.length - 1));
+        System.out.println(RBS(nums, 7, 0, nums.length - 1));
     }
 
     static int RBS(int[] arr, int target, int start, int end) {
